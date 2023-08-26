@@ -18,6 +18,10 @@ describe('shapesCheck', () => {
             const shapes = new Shapes('blue','lol','purple')
             expect(shapes.textColor).toEqual('purple')
         })
+        it('Should check shapes textColor', () => {
+            const shapes = new Shapes('blue','lol','purple')
+            expect(shapes.textColor).toEqual('purple')
+        })
     })
     describe('It should check the triangle:', () => {
         it('Should check triangle = blue', () => {

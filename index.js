@@ -1,29 +1,38 @@
-const {Triangle, Square, Circle, Shapes} = require('./lib/shapes.js')
+/* TODO 
+- If/statement or whatever limiting it to 3 characters
+-  add in tests for the render functions
+
+*/
+
+const {Triangle, Square, Circle,} = require('./lib/shapes.js')
 const inquirer = require('inquirer')
+const maxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
 const fs = require('fs')
+inquirer.registerPrompt('maxLengthInput', maxLengthInputPrompt)
 let shapeString = ``
 
 const questions = [
     {
-        type: 'input',
+        type: 'maxLengthInput',
         name: 'text',
-        message: 'What is your 3 character Acronym?',
+        message: '\n\nWhat is your 3 character Acronym?:',
+        maxLength: 3
         },
         {
         type: 'input',
         name: 'textColor',
-        message: 'What color do you want the text to be?',
+        message: '\n\nWhat color do you want the text to be?\n(for hex use #)\n(keywords work too!):',
         },
         {
         type: 'list',
         name: 'shape',
-        message: 'What shape do you want for your SVG logo?',
+        message: '\n\nWhat shape do you want for your SVG logo?:',
         choices: ['Circle','Square','Triangle'],
         },
         {
-        type: 'input',
+        type: 'input\n',
         name: 'color',
-        message: 'What color do you want your shape to be?'
+        message: '\n\nWhat color do you want your shape to be?\n(for hex use #)\n(keywords work too!):',
         }
 ]
 inquirer.prompt(questions).then((answers) => { 
@@ -45,8 +54,7 @@ width="300" height="200"
 xmlns="http://www.w3.org/2000/svg">
 ${shapeString}
 </svg>` 
-console.log(shapeFile);
 fs.writeFile(`logo.svg`, shapeFile, (err) =>
-    err ? console.log(err) : console.log("Success!")
+    err ? console.log(err) : console.log("\nGenerated logo.svg")
   );
 })
