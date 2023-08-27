@@ -18,10 +18,6 @@ describe('shapesCheck', () => {
             const shapes = new Shapes('blue','lol','purple')
             expect(shapes.textColor).toEqual('purple')
         })
-        it('Should check shapes textColor', () => {
-            const shapes = new Shapes('blue','lol','purple')
-            expect(shapes.textColor).toEqual('purple')
-        })
     })
     describe('It should check the triangle:', () => {
         it('Should check triangle = blue', () => {
@@ -35,6 +31,12 @@ describe('shapesCheck', () => {
         it('Should check triangle textColor', () => {
             const triangle = new Triangle('blue','lol','purple')
             expect(triangle.textColor).toEqual('purple')
+        })
+        it('Should check triangle render()', () => {
+            const triangle = new Triangle('blue','lol','purple')
+            console.log('here:' + triangle.render())
+            expect(triangle.render()).toEqual(`<polygon points="150, 18 244, 182 56, 182" fill="blue" />
+            <text x="150" y="140" font-size="45" text-anchor="middle" fill="purple">lol</text>`)
         })
     })
     describe('It should check the square:', () => {
