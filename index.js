@@ -1,8 +1,3 @@
-/* TODO 
-- If/statement or whatever limiting it to 3 characters
--  add in tests for the render functions
-
-*/
 
 const {Triangle, Square, Circle,} = require('./lib/shapes.js')
 const inquirer = require('inquirer')
