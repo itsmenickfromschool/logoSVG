@@ -1,29 +1,37 @@
-# logoSVG
+# Nick's SVG Logo Maker
 
-GIVEN a command-line application that accepts user input
+## Description
+Create custom SVG logos with a simple command-line interface! This application allows users to input text, choose text and shape colors, and select a shape to generate a unique SVG logo. During the creation of this app I learned more about Object Oriented Programming (OOP) and use of classes and inheritance. 
 
-WHEN I am prompted for text
+## Walkthrough Video
+[Click here to watch the walkthrough video](https://youtu.be/UFKi7QdDFqQ)
 
-THEN I can enter up to three characters
 
-WHEN I am prompted for the text color
+## Getting Started
 
-THEN I can enter a color keyword (OR a hexadecimal number)
+### Prerequisites
+- Node.js
+- npm
 
-WHEN I am prompted for a shape
+### Installation
 
-THEN I am presented with a list of shapes to choose from: circle, triangle, and square
+1. Clone the repository:
+2. Run terminal command: 'npm i' on your terminal to install the required packages.
 
-WHEN I am prompted for the shape's color
+### Usage
 
-THEN I can enter a color keyword (OR a hexadecimal number)
+Navigate your terminal to the  directory you cloned the repository into.
 
-WHEN I have entered input for all the prompts
+Run terminal command: 'node index.js' to run the command-line application, follow the prompts to generate an SVG logo. 
 
-THEN an SVG file is created named `logo.svg`
 
-AND the output text "Generated logo.svg" is printed in the command line
+### Testing
+Run terminal command: 'npm run test'
 
-WHEN I open the `logo.svg` file in a browser
+## Contributors
+This app was created by Nicholas Burr, all code is original. I would like to thank my TA team at EDX2U as well as my tutor Dru Sanchez for general help and direction. I used the inquirer NPM package as well as the jest testing package. 
 
-THEN I am shown a 300x200 pixel image that matches the criteria I entered
+## License
+This app has a GPL3 license, refer to the repository for more info. 
+
+
