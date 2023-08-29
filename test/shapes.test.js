@@ -1,7 +1,6 @@
 const { describe } = require('node:test');
 const {Triangle, Square, Circle, Shapes} = require('../lib/shapes.js')
-const shape = new Triangle('blue', 'svg');
-console.log(shape)
+
 
 describe('shapesCheck', () => {
     
@@ -34,9 +33,8 @@ describe('shapesCheck', () => {
         })
         it('Should check triangle render()', () => {
             const triangle = new Triangle('blue','lol','purple')
-            console.log('here:' + triangle.render())
             expect(triangle.render()).toEqual(`<polygon points="150, 18 244, 182 56, 182" fill="blue" />
-            <text x="150" y="140" font-size="45" text-anchor="middle" fill="purple">lol</text>`)
+<text x="150" y="140" font-size="45" text-anchor="middle" fill="purple">lol</text>`)
         })
     })
     describe('It should check the square:', () => {
@@ -52,6 +50,11 @@ describe('shapesCheck', () => {
             const square = new Square('blue','lol','purple')
             expect(square.textColor).toEqual('purple')
         })
+        it('Should check square render()', () => {
+            const square = new Square('blue','lol','purple')
+            expect(square.render()).toEqual(`<rect x="70" y="33" width="170" height="170" fill="blue"/>
+<text x="155" y="130" font-size="60" text-anchor="middle" fill="purple">lol</text>`)
+        })
     })
     describe('It should check the circle:', () => {
         it('Should check circle = blue', () => {
@@ -65,6 +68,11 @@ describe('shapesCheck', () => {
         it('Should check circle textColor', () => {
             const circle = new Circle('blue','lol','purple')
             expect(circle.textColor).toEqual('purple')
+        })
+        it('Should check circle render()', () => {
+            const circle = new Circle('blue','lol','purple')
+            expect(circle.render()).toEqual(`<circle cx="150" cy="100" r="100" fill="blue" />
+<text x="150" y="113" font-size="60" text-anchor="middle" fill="purple">lol</text>`)
         })
     })
 })
